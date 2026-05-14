@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diljeet Digital Marketing | Performance Growth Agency</title>
+  <meta name="description" content="Diljeet Digital Marketing scales brands with performance ads, SEO, content systems, and conversion-first creative.">
+  <meta name="keywords" content="Diljeet Digital Marketing, performance marketing, SEO agency, social media marketing, PPC">
+  <meta property="og:title" content="Diljeet Digital Marketing">
+  <meta property="og:description" content="Growth systems built for revenue, not vanity metrics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#wa.link">
+  <link rel="canonical" href="#wa.link">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --hydra-bg: #0c1224;
+      --hydra-ink: #e5f5ff;
+      --hydra-muted: #9db4c7;
+      --hydra-card: #131f3d;
+      --hydra-line: rgba(141, 177, 212, 0.25);
+      --hydra-cyan: #3ee4ff;
+      --hydra-lime: #bef264;
+      --hydra-coral: #ff9f8a;
+      --hydra-deep: #070d1d;
+      --shadow-hydra: 0 20px 44px rgba(5, 10, 22, 0.45);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--hydra-ink);
+      background:
+        radial-gradient(circle at 7% 0%, rgba(62, 228, 255, 0.2) 0%, transparent 28%),
+        radial-gradient(circle at 93% 8%, rgba(190, 242, 100, 0.16) 0%, transparent 24%),
+        linear-gradient(180deg, #0f1a36 0%, #0a1329 45%, #070d1d 100%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .navbar-brand {
+      font-family: "Syne", sans-serif;
+      letter-spacing: 0.2px;
+    }
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(8, 15, 32, 0.85) !important;
+      border-bottom: 1px solid var(--hydra-line);
+    }
+
+    .navbar-brand {
+      font-size: 1.45rem;
+      color: #dff7ff !important;
+      line-height: 1;
+    }
+
+    .navbar-brand span {
+      color: var(--hydra-lime);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(190, 242, 100, 0.35);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.2rem rgba(62, 228, 255, 0.25);
+    }
+
+    .nav-link {
+      color: #d0e9fa !important;
+      font-weight: 600;
+      position: relative;
+      margin-left: 0.2rem;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.2rem;
+      width: 0;
+      height: 2px;
+      background: var(--hydra-cyan);
+      transition: width 0.28s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: #f0f4ff;
+      background:
+        linear-gradient(120deg, rgba(16, 12, 8, 0.72), rgba(33, 22, 14, 0.52)),
+        radial-gradient(circle at 18% 22%, rgba(245, 222, 179, 0.32), transparent 42%),
+        radial-gradient(circle at 82% 16%, rgba(252, 239, 214, 0.24), transparent 36%),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80") center/cover,
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80") center/cover;
+      background-blend-mode: multiply, screen, soft-light, normal, normal;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 32rem;
+      height: 32rem;
+      border-radius: 50%;
+      filter: blur(72px);
+      z-index: 0;
+    }
+
+    .hero::before {
+      top: -22%;
+      right: -8%;
+      background: rgba(62, 228, 255, 0.2);
+      animation: drift 10s ease-in-out infinite;
+    }
+
+    .hero::after {
+      bottom: -24%;
+      left: -9%;
+      background: rgba(190, 242, 100, 0.2);
+      animation: drift 9s ease-in-out infinite reverse;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      padding: 1rem;
+      animation: rise 900ms ease-out;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 1px solid rgba(190, 242, 100, 0.45);
+      color: #dcfccb;
+      background: rgba(14, 28, 55, 0.48);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 6.2vw, 4.9rem);
+      line-height: 0.96;
+      margin-bottom: 0.9rem;
+      text-wrap: balance;
+    }
+
+    .hero h1 .grad {
+      background: linear-gradient(130deg, var(--hydra-cyan), var(--hydra-lime));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 0 auto 1.8rem;
+      color: #d4e9f9;
+      font-size: 1.08rem;
+    }
+
+    .btn-hydra {
+      background: linear-gradient(120deg, #3ee4ff, #39ffb8);
+      border: 0;
+      color: #03212b;
+      border-radius: 999px;
+      padding: 0.86rem 1.8rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-hydra);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-hydra:hover,
+    .btn-hydra:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 45px rgba(62, 228, 255, 0.3);
+      color: #001b24;
+    }
+
+    .btn-outline-hydra {
+      border: 1px solid rgba(62, 228, 255, 0.65);
+      color: #dbf6ff;
+      border-radius: 999px;
+      padding: 0.86rem 1.5rem;
+      font-weight: 700;
+      background: rgba(11, 21, 44, 0.4);
+    }
+
+    .btn-outline-hydra:hover,
+    .btn-outline-hydra:focus {
+      background: rgba(62, 228, 255, 0.14);
+      color: #ffffff;
+      border-color: #3ee4ff;
+    }
+
+    .hero-stats {
+      margin-top: 1.6rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .hero-stat {
+      border: 1px solid rgba(143, 177, 210, 0.35);
+      border-radius: 12px;
+      background: rgba(8, 15, 31, 0.52);
+      padding: 0.8rem 1rem;
+      min-width: 138px;
+    }
+
+    .hero-stat h3 {
+      font-size: 1.45rem;
+      margin: 0;
+      color: var(--hydra-lime);
+    }
+
+    .hero-stat p {
+      margin: 0.25rem 0 0;
+      font-size: 0.83rem;
+      color: #bdd5e9;
+    }
+
+    .whatsapp-btn {
+      display: block;
+      max-width: min(95vw, 500px);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(5, 35, 34, 0.45);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      margin: 0 auto 1rem;
+    }
+
+    .hero-media-top {
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-whatsapp {
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #25d366, #1ebe57);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 0.72rem 1.4rem;
+      box-shadow: 0 12px 26px rgba(37, 211, 102, 0.32);
+    }
+
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus {
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn:hover,
+    .whatsapp-btn:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 44px rgba(5, 35, 34, 0.58);
+    }
+
+    .whatsapp-btn img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    section {
+      padding: 4.6rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 0.6rem;
+      color: #f0faff;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #a9c2d6;
+      max-width: 710px;
+      margin: 0 auto 2.4rem;
+    }
+
+    .service-card,
+    .project-card,
+    .testimonial-card,
+    .point-card,
+    .accordion-item {
+      border: 1px solid var(--hydra-line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(155deg, rgba(22, 34, 66, 0.95), rgba(11, 20, 41, 0.9));
+      box-shadow: var(--shadow-hydra);
+    }
+
+    .service-card,
+    .project-card,
+    .gallery-tile,
+    .testimonial-card,
+    .point-card {
+      transform: translateY(14px);
+      opacity: 0;
+      animation: reveal 740ms ease forwards;
+    }
+
+    .service-card:nth-child(2),
+    .project-card:nth-child(2),
+    .gallery-tile:nth-child(2),
+    .testimonial-card:nth-child(2),
+    .point-card:nth-child(2) { animation-delay: 100ms; }
+
+    .service-card:nth-child(3),
+    .project-card:nth-child(3),
+    .gallery-tile:nth-child(3),
+    .testimonial-card:nth-child(3),
+    .point-card:nth-child(3) { animation-delay: 200ms; }
+
+    .service-card img,
+    .project-card img,
+    .gallery-tile img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .service-card .card-body p,
+    .project-card .p-4 p {
+      color: #aec8de !important;
+    }
+
+    #why,
+    #gallery,
+    footer {
+      background: linear-gradient(145deg, #060b19, #0e1a3a);
+      color: #e8f6ff;
+    }
+
+    .point-card {
+      height: 100%;
+      padding: 1.5rem;
+    }
+
+    .point-card .icon {
+      width: 60px;
+      height: 60px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(62, 228, 255, 0.28), rgba(190, 242, 100, 0.24));
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #eafff5;
+    }
+
+    #frameworks,
+    #faq {
+      background: linear-gradient(180deg, #0d1732, #0a1227);
+    }
+
+    .gallery-tile img {
+      height: 250px;
+      border-radius: 14px;
+      transition: transform 0.35s ease, filter 0.3s ease;
+      filter: saturate(0.9);
+    }
+
+    .gallery-tile:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.1);
+    }
+
+    #testimonials {
+      background: linear-gradient(160deg, #081127, #101f46);
+      color: #d8eaff;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+      border-color: rgba(62, 228, 255, 0.25);
+      min-height: 220px;
+    }
+
+    .accordion-item {
+      border-color: rgba(143, 177, 210, 0.25);
+      background: rgba(11, 21, 42, 0.9);
+    }
+
+    .accordion-button {
+      font-weight: 700;
+      color: #def5ff;
+      background: #101b37;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: #14305d;
+      color: #9cf0ff;
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      filter: invert(1) brightness(2);
+    }
+
+    .accordion-body {
+      color: #bed5e9;
+    }
+
+    .cta-section {
+      background:
+        linear-gradient(130deg, rgba(5, 14, 50, 0.88), rgba(11, 89, 107, 0.76)),
+        url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #eef8ff;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.3rem);
+    }
+
+    footer {
+      border-top: 1px solid rgba(143, 177, 210, 0.18);
+      color: #b3cde2;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes drift {
+      0%,
+      100% { transform: translateY(0px); }
+      50% { transform: translateY(-22px); }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 3.7rem 0;
+      }
+
+      .hero {
+        min-height: 86vh;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .service-card img,
+      .project-card img,
+      .gallery-tile img {
+        height: 210px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home">HYDRA <span>DIGITAL</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Why Hydra</a></li>
+          <li class="nav-item"><a class="nav-link" href="#frameworks">Frameworks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-hydra btn-sm ms-lg-3 mt-2 mt-lg-0" href="#wa.link" target="_blank" rel="noopener noreferrer">Visit Domain</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-media-top">
+        <a class="whatsapp-btn" href="#wa.link" target="_blank" rel="noopener noreferrer" aria-label="Open Hydra Digital Marketing website">
+          <img src="m.png" alt="Hydra Digital Marketing hero banner" loading="eager">
+        </a>
+        <a class="btn btn-whatsapp" href="#wa.link" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+      </div>
+      <span class="chip">Revenue-first growth partner</span>
+      <h1>Hydra Digital Marketing <span class="grad">builds campaigns that convert</span></h1>
+      <p>We help service brands, e-commerce stores, and founders grow predictably with paid media, SEO, UGC creative, and high-converting funnel systems.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a class="btn btn-hydra" href="#contact">Book Growth Audit</a>
+        <a class="btn btn-outline-hydra" href="#wa.link" target="_blank" rel="noopener noreferrer">hydradigitalmarketing.site</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h3>7.2x</h3>
+          <p>avg. ROAS in core ad accounts</p>
+        </div>
+        <div class="hero-stat">
+          <h3>120+</h3>
+          <p>campaign launches in 2025</p>
+        </div>
+        <div class="hero-stat">
+          <h3>31M+</h3>
+          <p>qualified impressions generated</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Growth Services</h2>
+      <p class="section-sub">End-to-end digital systems designed to turn attention into qualified leads and repeat revenue.</p>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80" alt="Performance ad dashboards" loading="lazy">
+            <div class="card-body p-4">
+              <h5>Performance Advertising</h5>
+              <p class="mb-0">Meta, Google, and YouTube campaigns engineered for cost-efficient acquisition and scalable remarketing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=900&q=80" alt="SEO growth strategy" loading="lazy">
+            <div class="card-body p-4">
+              <h5>SEO and Content Engine</h5>
+              <p class="mb-0">Technical SEO, topic clusters, and conversion-focused content that builds sustainable organic demand.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Social media strategy meeting" loading="lazy">
+            <div class="card-body p-4">
+              <h5>Social Media Growth</h5>
+              <p class="mb-0">Audience-led calendars, reels production, and creator collaborations that increase trust and pipeline.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Conversion optimization charts" loading="lazy">
+            <div class="card-body p-4">
+              <h5>Landing Pages and CRO</h5>
+              <p class="mb-0">Rapid page experiments and conversion optimization that improve lead quality and reduce CPA.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Content production setup" loading="lazy">
+            <div class="card-body p-4">
+              <h5>Creative and UGC Production</h5>
+              <p class="mb-0">Ad creatives, hooks, scripts, and UGC style assets built for platform-native conversion behavior.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <img src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?auto=format&fit=crop&w=900&q=80" alt="Marketing analytics reporting" loading="lazy">
+            <div class="card-body p-4">
+              <h5>Analytics and Reporting</h5>
+              <p class="mb-0">Attribution-aware dashboards and weekly insights so every spend decision is data-backed and transparent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Why Brands Pick Hydra</h2>
+      <p class="section-sub">Built like a growth pod: strategy, media buying, content, and analytics under one accountable team.</p>
+      <div class="row text-center g-4">
+        <div class="col-md-3">
+          <div class="point-card">
+            <div class="icon">01</div>
+            <h5>Fast Testing Cycles</h5>
+            <p class="mb-0">New hooks, audiences, and creatives tested weekly for faster learning loops.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="point-card">
+            <div class="icon">02</div>
+            <h5>Clear Attribution</h5>
+            <p class="mb-0">We track what drives revenue, not just what gets likes or impressions.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="point-card">
+            <div class="icon">03</div>
+            <h5>Creative That Sells</h5>
+            <p class="mb-0">Every asset is engineered around pain points, proof, and strong CTA momentum.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="point-card">
+            <div class="icon">04</div>
+            <h5>Founder-Level Focus</h5>
+            <p class="mb-0">Direct communication, monthly strategy deep-dives, and no black-box reporting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="frameworks">
+    <div class="container">
+      <h2 class="section-title">Hydra Campaign Frameworks</h2>
+      <p class="section-sub">Pre-built yet customized playbooks to match your growth stage and sales cycle.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="project-card text-center h-100">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="Startup growth sprint marketing" loading="lazy">
+            <div class="p-4">
+              <h5>Launch Sprint</h5>
+              <p class="mb-0">For new brands: offer-market fit testing, ad validation, and rapid creative iteration.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card text-center h-100">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Scale campaign strategy" loading="lazy">
+            <div class="p-4">
+              <h5>Scale Engine</h5>
+              <p class="mb-0">For growth brands: full-funnel segmentation, bid strategy refinement, and creative pipelines.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card text-center h-100">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Enterprise omnichannel marketing" loading="lazy">
+            <div class="p-4">
+              <h5>Omnichannel Domination</h5>
+              <p class="mb-0">For category leaders: integrated paid, organic, email, and automation stack orchestration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container-fluid" style="max-width: 1500px;">
+      <h2 class="section-title">Recent Campaign Snapshots</h2>
+      <p class="section-sub">A look at channel execution, content studios, and growth operations in action.</p>
+      <div class="row g-4">
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Team reviewing campaign insights" loading="lazy"></div>
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Digital ads dashboard" loading="lazy"></div>
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Social content strategy workshop" loading="lazy"></div>
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Creative production recording" loading="lazy"></div>
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Analytics and reporting board" loading="lazy"></div>
+        <div class="col-md-2 col-6 gallery-tile"><img src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?auto=format&fit=crop&w=600&q=80" class="img-fluid" alt="Performance metrics review" loading="lazy"></div>
+      </div>
+      <div class="text-center pt-4">
+        <a class="btn btn-hydra btn-lg" href="#contact">Get a Custom Growth Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Client Results</h2>
+      <p class="section-sub">Proof from brands that trusted Hydra to run growth across paid and organic channels.</p>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"Hydra helped us reduce CPL by 42% in six weeks while improving demo quality. Their reporting is crystal clear."</p>
+                  <h6 class="mt-3 mb-0">NexaCloud B2B SaaS</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"Our e-commerce revenue doubled in one quarter. Creative testing and retargeting strategy were game-changing."</p>
+                  <h6 class="mt-3 mb-0">Luma Skin Co.</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"From SEO architecture to high-intent ads, Hydra gave us one unified growth system that actually scales."</p>
+                  <h6 class="mt-3 mb-0">ArcNest Interiors</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"We went from inconsistent leads to 90+ qualified inbound leads a month with predictable spend efficiency."</p>
+                  <h6 class="mt-3 mb-0">Summit Legal Advisors</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"Hydra's team acts like an in-house growth department. Fast execution, no fluff, measurable wins."</p>
+                  <h6 class="mt-3 mb-0">ByteBridge Tech</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="testimonial-card h-100">
+                  <p>"The funnel and remarketing rebuild lifted our conversion rate from 1.8% to 4.6% in under 60 days."</p>
+                  <h6 class="mt-3 mb-0">Vanta Fitness Gear</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">What does onboarding with Hydra look like?</button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">We begin with a growth audit, identify bottlenecks, align channel priorities, and launch a 30-day action sprint.</div>
+          </div>
+        </div>
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Do you work with small and mid-size brands?</button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes. We support startups, service businesses, and scale-stage e-commerce teams with custom growth roadmaps.</div>
+          </div>
+        </div>
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">How soon can we expect performance gains?</button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Most accounts see early efficiency improvements in 2-4 weeks, with stronger scaling patterns by weeks 6-10.</div>
+          </div>
+        </div>
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">Can Hydra manage both paid and organic channels?</button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Absolutely. We integrate paid media, SEO, social content, and conversion optimization under one strategy.</div>
+          </div>
+        </div>
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">Where can I reach your team?</button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Visit our primary domain at hydradigitalmarketing.site and submit your brief to get a same-day callback.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-section text-center py-5">
+    <div class="container">
+      <h2 class="mb-3">Ready to scale with Hydra?</h2>
+      <p class="mb-4 text-light">Tell us your goals, CAC target, and timeline. We will return a channel plan tailored to your business model.</p>
+      <a class="btn btn-hydra btn-lg" href="#wa.link" target="_blank" rel="noopener noreferrer">Start at hydradigitalmarketing.site</a>
+    </div>
+  </section>
+
+  <footer class="text-center p-3">
+    © 2026 Hydra Digital Marketing | hydradigitalmarketing.site
+  </footer>
+
+  <a class="whatsapp-float" href="#wa.link" target="_blank" rel="noopener noreferrer" aria-label="Visit Hydra Digital Marketing website">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Contact icon">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      var primaryUrl = "#wa.link";
+
+      var clickables = document.querySelectorAll(".service-card, .project-card, .gallery-tile, .testimonial-card, .point-card");
+      clickables.forEach(function (el) {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", function () {
+          window.open(primaryUrl, "_blank", "noopener,noreferrer");
+        });
+      });
+
+      var images = document.querySelectorAll("img");
+      images.forEach(function (img) {
+        if (img.closest("a") || img.closest(".service-card, .project-card, .gallery-tile, .testimonial-card, .point-card")) {
+          return;
+        }
+        img.style.cursor = "pointer";
+        img.addEventListener("click", function () {
+          window.open(primaryUrl, "_blank", "noopener,noreferrer");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
